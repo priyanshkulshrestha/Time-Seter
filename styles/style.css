@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.myclock{
+    display: flex;
+    width: 100VW;
+    justify-content: space-around;
+    border: 1px solid red;
+    margin-left: 0;
+}
+
+.country{
+    width: 300px;
+    margin: 10px;
+}
+
+h6{
+    font-weight: bolder;
+}
+
+button{
+    border: 2px solid rgb(0, 255, 157);
+    background-color: rgb(164, 240, 250);
+    padding: 5px 20px ;
+    border-radius: 10px;
+}

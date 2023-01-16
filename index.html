@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeMachine</title>
+
+    <!-- <link rel="stylesheet" href="./styles/clock.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- analog clock  -->
+    <link rel="stylesheet" href="./styles/clock.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <!-- MOMENT JS  -->
+    <script type = "text/JavaScript" src = "https://MomentJS.com/downloads/moment.js"></script>
+
+
+</head>
+<body onload="showTimes()">
+    <div class="my_container">
+        <div class="myclock">
+            <div class="country">
+                <H1>India</H1>
+                <div class="analog">
+                    <h5>Analog clock</h5>
+                    <div class="icon-large icon-clock">
+                        <div class="clock">
+                            <ol>
+                            <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        <div id="hour"></div>
+                        <div id="min"></div>
+                        <div id="sec"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digital">
+                    <h5>Digital Clock</h5>
+                    <div class="time">
+                        Time 
+                        <span id="Indiantime" class="timepicker"></span>
+                    </div>
+                    <div class="date">
+                        date 
+                        <span id="Indiandate" class="datepicker"></span>
+                    </div>
+                    <div class="setTime">
+                        <h6>Set time by Indian time</h6>
+                        
+                            <label for="time">Indian Time</label>
+                            <input type="text" id = "india-time" class="timepicker">
+                            <label for="date">Indian Date</label>
+                            <input type="text" id = "india-date" class="datepicker">
+                            <button class="modal-close" onclick="getTime('+05:30','india')">SET TIME</button>
+                        
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="country">
+                <H1>Oregon</H1>
+                <div class="analog">
+                    <h5>Analog clock</h5>
+                    <div class="icon-large icon-clock">
+                        <div class="clock">
+                            <ol>
+                            <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        <div id="hour"></div>
+                        <div id="min"></div>
+                        <div id="sec"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digital">
+                    <h5>Digital Clock</h5>
+                    <div class="time">
+                        Time 
+                        <span id="Oregontime"></span>
+                    </div>
+                    <div class="date">
+                        date 
+                        <span id="Oregondate"></span>
+                    </div>
+                    <div class="setTime">
+                        <h6>Set time by Oregon time</h6>
+                        
+                            <label for="time">Oregon Time</label>
+                            <input type="text" id = "Oregon-time" class="timepicker">
+                            <label for="date">Oregon Date</label>
+                            <input type="text" id = "Oregon-date" class="datepicker">
+                            <button class="modal-close" onclick="getTime('-08:00','Oregon')" >SET TIME</button>
+                        
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="country">
+                <H1>Perth</H1>
+                <div class="analog">
+                    <h5>Analog clock</h5>
+                    <div class="icon-large icon-clock">
+                        <div class="clock">
+                            <ol>
+                            <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        <div id="hour"></div>
+                        <div id="min"></div>
+                        <div id="sec"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digital">
+                    <h5>Digital Clock</h5>
+                    <div class="time">
+                        Time 
+                        <span id="Perthtime"></span>
+                    </div>
+                    <div class="date">
+                        date 
+                        <span id="Perthdate"></span>
+                    </div>
+                    <div class="setTime">
+                        <h6>Set time by Perth time</h6>
+                        
+                            <label for="time">Perth Time</label>
+                            <input type="text" id = "Perth-time" class="timepicker">
+                            <label for="date">Perth Date</label>
+                            <input type="text" id = "Perth-date" class="datepicker">
+                            <button class="modal-close" onclick="getTime('+08:00','Perth')">SET TIME</button>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="country">
+                <H1>Sweden</H1>
+                <div class="analog">
+                    <h5>Analog clock</h5>
+                    <div class="icon-large icon-clock">
+                        <div class="clock">
+                            <ol>
+                            <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        <div id="hour"></div>
+                        <div id="min"></div>
+                        <div id="sec"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digital">
+                    <h5>Digital Clock</h5>
+                    <div class="time">
+                        Time 
+                        <span id="Swedentime"></span>
+                    </div>
+                    <div class="date">
+                        date 
+                        <span id="Swedendate"></span>
+                    </div>
+                    <div class="setTime">
+                        <h6>Set time by Sweden time</h6>
+                        
+                            <label for="time">Sweden Time</label>
+                            <input type="text" id = "Sweden-time" class="timepicker">
+                            <label for="date">Sweden Date</label>
+                            <input type="text" id = "Sweden-date" class="datepicker">
+                            <button class="modal-close" onclick="getTime('+01:00','Sweden')">SET TIME</button>
+                        
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+    <script src="./js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances1 = M.Modal.init(elems);
+        });
+    </script>
+      
+    <script>
+        $(document).ready(function(){
+        $('.datepicker').datepicker();
+        });
+       
+        $(document).ready(function(){
+        $('.timepicker').timepicker();
+        });
+      
+    </script>
+ 
+</body>
+</html>
