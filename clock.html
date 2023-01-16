@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="./styles/clock.css">
 </head>
 <body>
     <div class="icon-large icon-clock">
@@ -28,6 +28,7 @@
         <div id="sec"></div>
         </div>
     </div>
+    <script src="./js/moment.js"></script>
 <script>
  
 window.requestAnimFrame = (function(){
@@ -45,18 +46,21 @@ window.requestAnimFrame = (function(){
         min = document.getElementById("min"),
         sec = document.getElementById("sec");
     //set up a loop
-    (function loop(){
-        requestAnimFrame(loop);
+    // (function loop(){
+        // requestAnimFrame(loop);
         draw();
-    })();
+    // })();
     //position the hands
     function draw(){
-        var now = new Date(),//now
+        var nowDate = new Date();//now
+        console.log(nowDate);
+        var now = moment.utc().utcOffset('-08:00')._d;
             then = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0),//midnight
             diffInMil = (now.getTime() - then.getTime()),// difference in milliseconds
             h = (diffInMil/(1000*60*60)),//hours
             m = (h*60),//minutes
             s = (m*60);//seconds
+            console.log(now);
         //rotate the hands accordingly
         sec.style.webkitTransform = "rotate(" + (s * 6) + "deg)";
         hour.style.webkitTransform = "rotate(" + (h * 30 + (h / 2)) + "deg)";

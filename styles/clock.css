@@ -5,7 +5,7 @@
   border-radius: 38px;
   position: relative;
   top: 110px;
-  left: 100px;
+  left: 150px;
   transform: translate(-50%, -50%);
 }
 
@@ -106,7 +106,7 @@
     transform: rotate(360deg);
   }
 }
-#hour {
+.hour {
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -117,12 +117,12 @@
   margin-top: -7px;
   margin-left: -7px;
 }
-#hour:before, #hour:after {
+.hour:before, .hour:after {
   content: "";
   display: block;
   position: absolute;
 }
-#hour:before {
+.hour:before {
   width: 8px;
   height: 55px;
   border-radius: 4px;
@@ -133,7 +133,7 @@
   transform: translate(-50%, 0);
 }
 
-#min {
+.min {
   width: 0;
   height: 0;
   border-radius: 50%;
@@ -142,12 +142,12 @@
   top: 50%;
   left: 50%;
 }
-#min:before, #min:after {
+.min:before, .min:after {
   content: "";
   display: block;
   position: absolute;
 }
-#min:before {
+.min:before {
   width: 6px;
   height: 70px;
   border-radius: 4px;
@@ -158,7 +158,7 @@
   transform: translate(-50%, 0);
 }
 
-#sec {
+.sec {
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -170,12 +170,12 @@
   margin-top: -4px;
   margin-left: -4px;
 }
-#sec:before, #sec:after {
+.sec:before, .sec:after {
   content: "";
   display: block;
   position: absolute;
 }
-#sec:before {
+.sec:before {
   width: 2px;
   height: 105px;
   border-radius: 4px;
