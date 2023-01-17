@@ -9,7 +9,6 @@
     display: flex;
     width: 100VW;
     justify-content: space-around;
-    border: 1px solid red;
     margin-left: 0;
     flex-wrap: wrap;
 }
@@ -27,12 +26,24 @@ h1{
     text-align: center;
 }
 
-button{
-    border: 2px solid rgb(0, 255, 157);
-    background-color: rgb(164, 240, 250);
+
+.btn-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px ;
+}
+
+.setbtn{
+    background-color: aliceblue;
+    border: 2px solid black;
+    margin-right: 0;
     padding: 5px 20px ;
     border-radius: 10px;
-    display: flex;
-    align-self: center;
-    justify-self: center;
+
+}
+
+.sec{
+    display: none;
 }

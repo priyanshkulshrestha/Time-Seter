@@ -2,7 +2,7 @@ function showTimes(GMTtime){
 
     if(GMTtime)
     {
-        console.log("now stop: " + GMTtime.toString());
+        console.log("stop: " + GMTtime.toString());
     }
     else{
         GMTtime= moment().utc()
@@ -64,15 +64,12 @@ function showTimes(GMTtime){
 }
 
 
-function getTime(changes, place, tzone = 'iso') {
-    console.log(changes);
+function getTime(changes, place) {
     let time = document.getElementById(`${place}-time`).value;
     let dat = document.getElementById(`${place}-date`).value;
 
-    console.log(time + " " + dat);
 
     let ans = moment(dat + " " + time + changes).utc()
-    console.log("date & time: ",ans);
 
     showTimes(ans);
 }
@@ -88,30 +85,23 @@ window.requestAnimFrame = (function(){
   
   //initialize the clock in a self-invoking function
   function clock(place, time){ 
+    console.log("called time: ", time.toString() );
       var hour = document.getElementById(`${place}-hour`),
           min = document.getElementById(`${place}-min`),
           sec = document.getElementById(`${place}-sec`);
-          console.log(hour, min, sec);
-      //set up a loop
-      // (function loop(){
-          // requestAnimFrame(loop);
+      
           draw();
-      // })();
+      
       //position the hands
       function draw(){
-        //   var nowDate = new Date();//now
-          console.log("dfhakjsf "+time.toString());
-          
-          var now = time._d
-              then = new Date(),//midnight
-              diffInMil = (now.getTime() - then.getTime()),// difference in milliseconds
-              h = (diffInMil/(1000*60*60)),//hours
-              m = (h*60),//minutes
-              s = (m*60);//seconds
-              console.log(now);
+              h = (time.hours()*30),//hours
+              console.log(h);
+              m = (time.minutes()*6),//minutes
+              s = (time.seconds()*6);//seconds
+              console.log(time.seconds()+" " +s);
           //rotate the hands accordingly
-          sec.style.webkitTransform = "rotate(" + (s * 6) + "deg)";
-          hour.style.webkitTransform = "rotate(" + (h * 30 + (h / 2) + 10) + "deg)";
-          min.style.webkitTransform = "rotate(" + (m * 6 + 109) + "deg)";
+          sec.style.webkitTransform = "rotate(" + s + "deg)";
+          hour.style.webkitTransform = "rotate(" + h + "deg)";
+          min.style.webkitTransform = "rotate(" + m + "deg)";
       } 
   };
