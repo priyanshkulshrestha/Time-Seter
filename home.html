@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeMachine</title>
+
+    <!-- <link rel="stylesheet" href="./styles/clock.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- analog clock  -->
+    <link rel="stylesheet" href="./styles/clock.css">
+
+
+
+    <!-- MOMENT JS  -->
+    <script type = "text/JavaScript" src = "https://MomentJS.com/downloads/moment.js"></script>
+
+
+</head>
+
+<body onload="showTimes()">
+    <div class="my_container">
+        <div id="myClocks" class="myclock">
+            
+        </div>
+
+        <!-- <form class="addClock"> -->
+            <label class="addClockLable">Country/Watch Name</label>
+            <input type="text" class="addClockInput" id="addClockName"> 
+            <label class="addClockLable">Country/Watch Offset</label>
+            <input type="text" class="addClockInput" id="addClockOffset">
+            <button onclick="addClock()">Add Clock</button>
+        <!-- </form> -->
+
+    </div>
+</div>  
+    <script src="./js/script.js"></script>
+</body>
+</html>

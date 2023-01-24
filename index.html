@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimeMachine</title>
 
-    <!-- <link rel="stylesheet" href="./styles/clock.css"> -->
-    <link rel="stylesheet" href="./styles/style.css">
-
-    <!-- analog clock  -->
-    <link rel="stylesheet" href="./styles/clock.css">
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -26,6 +20,256 @@
 
 
 </head>
+
+<style>
+/* ******************** MY CSS ************************ */
+
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+border: 0;
+}
+
+.myclock{
+    display: flex;
+    width: 100VW;
+    justify-content: space-around;
+    margin-left: 0;
+    flex-wrap: wrap;
+}
+
+.country{
+    width: 300px;
+    margin: 10px;
+}
+
+h6{
+    font-weight: bolder;
+}
+
+h1{
+    text-align: center;
+}
+
+
+.btn-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px ;
+}
+
+.setbtn{
+    background-color: aliceblue;
+    border: 2px solid black;
+    margin-right: 0;
+    padding: 5px 20px ;
+    border-radius: 10px;
+
+}
+
+.sec{
+    display: none;
+}
+
+/* **********************************************************************
+********************ANALOG CLOCK CSS********************************** 
+********************************************************************** */
+
+
+.icon-large {
+  width: 220px;
+  height: 220px;
+  border-radius: 38px;
+  position: relative;
+  top: 110px;
+  left: 150px;
+  transform: translate(-50%, -50%);
+}
+
+.icon-clock {
+  overflow: hidden;
+  background: #dde1e7;
+  border-radius: 50%;
+  box-shadow: -3px -3px 7px #ffffff73,
+              2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+.clock {
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 2px 2px 5px #babecc,
+              inset -5px -5px 10px #ffffff73;
+}
+.clock ol {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.clock ol li {
+  counter-increment: labelCounter;
+  position: absolute;
+  font-size: 1.25em;
+}
+.clock ol li:before {
+  font-family: "Helvetica";
+  content: counter(labelCounter) "";
+}
+.clock ol li:nth-child(1) {
+  right: 55px;
+  top: 20px;
+}
+.clock ol li:nth-child(2) {
+  right: 25px;
+  top: 50px;
+}
+.clock ol li:nth-child(3) {
+  right: 12px;
+  top: 85px;
+}
+.clock ol li:nth-child(4) {
+  right: 25px;
+  top: 125px;
+}
+.clock ol li:nth-child(5) {
+  right: 55px;
+  top: 150px;
+}
+.clock ol li:nth-child(6) {
+  right: 90px;
+  top: 160px;
+}
+.clock ol li:nth-child(7) {
+  right: 125px;
+  top: 150px;
+}
+.clock ol li:nth-child(8) {
+  right: 155px;
+  top: 125px;
+}
+.clock ol li:nth-child(9) {
+  right: 165px;
+  top: 85px;
+}
+.clock ol li:nth-child(10) {
+  right: 150px;
+  top: 50px;
+}
+.clock ol li:nth-child(11) {
+  right: 120px;
+  top: 20px;
+}
+.clock ol li:nth-child(12) {
+  right: 85px;
+  top: 10px;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hour {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #303030;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -7px;
+  margin-left: -7px;
+}
+.hour:before, .hour:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.hour:before {
+  width: 8px;
+  height: 55px;
+  border-radius: 4px;
+  background: #303030;
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.min {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #303030;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.min:before, .min:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.min:before {
+  width: 6px;
+  height: 70px;
+  border-radius: 4px;
+  background: #303030;
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.sec {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #dd3e1c;
+  border: 2px solid #e13e1b;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+.sec:before, .sec:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.sec:before {
+  width: 2px;
+  height: 90px;
+  border-radius: 4px;
+  background: #e13e1b;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+
+</style>
+
+
 <body onload="showTimes()">
     <div class="my_container">
         <div class="myclock">
@@ -197,24 +441,133 @@
         </div>
     </div>
 </div>
-    <script src="./js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.modal');
-        var instances1 = M.Modal.init(elems);
-        });
-    </script>
-      
-    <script>
-        $(document).ready(function(){
-        $('.datepicker').datepicker();
-        });
-       
-        $(document).ready(function(){
-        $('.timepicker').timepicker();
-        });
-      
-    </script>
+<script>
+    function showTimes(GMTtime){
+
+if(GMTtime)
+{
+    console.log("stop: " + GMTtime.toString());
+}
+else{
+    GMTtime= moment().utc()
+}
+
+// INDIAN
+let indianTime = moment.utc(GMTtime).utcOffset('+05:30')
+console.log("indian time: " + indianTime.toString());
+hr = indianTime.hours();
+meredian = hr>=12 ? "PM" : "AM";
+hr = (hr > 12 ? hr%12 : hr);
+hr = hr<10 ? "0"+hr : hr;
+
+min = indianTime.minutes();
+min = min<10 ? "0"+min : min;
+document.getElementById("india-time").value = `${hr}:${min} ${meredian}`;
+document.getElementById("india-date").value = indianTime.format('MMM D, YYYY');
+clock("india", indianTime)
+
+
+// OREGON
+let oregonTime = moment.utc(GMTtime).utcOffset('-08:00');
+console.log("Oregon time: " + oregonTime.toString());
+hr = oregonTime.hours();
+meredian = hr>=12 ? "PM" : "AM";
+hr = (hr > 12 ? hr%12 : hr);
+hr = hr<10 ? "0"+hr : hr;
+min = oregonTime.minutes();
+min = min<10 ? "0"+min : min;
+document.getElementById("Oregon-time").value = `${hr}:${min} ${meredian}`;
+document.getElementById("Oregon-date").value = oregonTime.format('MMM D, YYYY');
+clock("Oregon", oregonTime)
+
+// PERTH
+let perthTime = moment.utc(GMTtime).utcOffset('+08:00')
+console.log("Perth time: " + perthTime.toString());
+hr = perthTime.hours();
+meredian = hr>=12 ? "PM" : "AM";
+hr = (hr > 12 ? hr%12 : hr);
+hr = hr<10 ? "0"+hr : hr;
+min = perthTime.minutes();
+min = min<10 ? "0"+min : min;
+document.getElementById("Perth-time").value = `${hr}:${min} ${meredian}`;
+document.getElementById("Perth-date").value = perthTime.format('MMM D, YYYY');
+clock("Perth", perthTime)
+
+// SWEDEN
+let swedenTime =  moment.utc(GMTtime).utcOffset('+01:00')
+console.log("Sweden time: " + swedenTime.toString());
+hr = swedenTime.hours();
+meredian = hr>=12 ? "PM" : "AM";
+hr = (hr > 12 ? hr%12 : hr);
+hr = hr<10 ? "0"+hr : hr;
+min = swedenTime.minutes();
+min = min<10 ? "0"+min : min;
+document.getElementById("Sweden-time").value = `${hr}:${min} ${meredian}`;
+document.getElementById("Sweden-date").value = swedenTime.format('MMM D, YYYY');
+clock("Sweden", swedenTime)
+}
+
+
+function getTime(changes, place) {
+let time = document.getElementById(`${place}-time`).value;
+let dat = document.getElementById(`${place}-date`).value;
+
+
+let ans = moment(dat + " " + time + changes).utc()
+
+showTimes(ans);
+}
+
+window.requestAnimFrame = (function(){
+return  window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+        };
+})();
+
+//initialize the clock in a self-invoking function
+function clock(place, time){ 
+console.log("called time: ", time.toString() );
+  var hour = document.getElementById(`${place}-hour`),
+      min = document.getElementById(`${place}-min`),
+      sec = document.getElementById(`${place}-sec`);
+  
+      draw();
+  
+  //position the hands
+  function draw(){
+          h = (time.hours()*30),//hours
+          console.log(h);
+          m = (time.minutes()*6),//minutes
+          s = (time.seconds()*6);//seconds
+          console.log(time.seconds()+" " +s);
+      //rotate the hands accordingly
+      sec.style.webkitTransform = "rotate(" + s + "deg)";
+      hour.style.webkitTransform = "rotate(" + h + "deg)";
+      min.style.webkitTransform = "rotate(" + m + "deg)";
+  } 
+};
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances1 = M.Modal.init(elems);
+    });
+</script>
+    
+<script>
+    $(document).ready(function(){
+    $('.datepicker').datepicker();
+    });
+    
+    $(document).ready(function(){
+    $('.timepicker').timepicker();
+    });
+    
+</script>
  
 </body>
 </html>
